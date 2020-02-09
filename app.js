@@ -1,8 +1,8 @@
-const express 	              = require("express"),
-	  app 		               = express(),
+const express                  = require("express"),
+	  app                      = express(),
 	  bodyParser               = require("body-parser"),
 	  fetch                    = require("node-fetch"),
-	  mongoose 	               = require("mongoose"),
+	  mongoose                 = require("mongoose"),
 	  RollerCoaster            = require("./models/rollercoaster"),
 	  Comment                  = require("./models/comment"),
 	  User                     = require("./models/user"),
@@ -13,12 +13,18 @@ const express 	              = require("express"),
 	  flash	                   = require("connect-flash"),
 	  methodOverride           = require("method-override"),
 	  {URLSearchParams}        = require('url');
-		
+
 const commentRoutes            = require("./routes/comments"),
 	  rollerCoasterRoutes      = require("./routes/rollercoasters"),
 	  indexRoutes              = require("./routes/index"),
 	  rollerCoasterListsRoutes = require("./routes/rollercoastersLists");
 
+
+
+
+/*---------------------------------------------------------------------
+                Database & Express.js Configurations
+ ---------------------------------------------------------------------*/
 
 
 const MongoDB_URL = process.env.DATABASEURL || "mongodb://localhost/thrill_hunter"
@@ -30,19 +36,12 @@ app.use(methodOverride("_method"));
 app.use(flash());
 initDB();
 
-
-/*---------------------------------------------------------------------
-                        Passport Configurations
- ---------------------------------------------------------------------*/
-
-
-/*---------------------------------------------------------------------
- | secret - 
- | resave - 
- | saveUninitialized - 
- ---------------------------------------------------------------------*/
-
 app.locals.moment = require('moment');
+
+
+/*---------------------------------------------------------------------
+                 Passport & Session Configurations
+ ---------------------------------------------------------------------*/
 
 app.use(expressSession({
 	secret: process.env.SECRETKEY,
@@ -56,12 +55,23 @@ passport.use(new LocalStratagey(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
+/*---------------------------------------------------------------------
+                        Setting Flash Errors
+ ---------------------------------------------------------------------*/
+
 app.use((req, res, next) => {
 	res.locals.currentUser= req.user;
     res.locals.error = req.flash("error");
 	res.locals.success = req.flash("success");
 	next(); 
 });
+
+
+/*---------------------------------------------------------------------
+                       Routes  Configurations
+ ---------------------------------------------------------------------*/
+
 
 app.use("/", indexRoutes);
 app.use("/", rollerCoasterListsRoutes);
