@@ -1,4 +1,4 @@
-const mongoose 		  = require("mongoose"),
+const     mongoose 	  = require("mongoose"),
 	  RollerCoaster   = require("./models/rollercoaster"),
 	  Comment 	  = require("./models/comment"),
 	  fetch           = require("node-fetch"),
