@@ -40,13 +40,15 @@ To see the app in action, go to [ThrillHunter](https://thrillhunter.herokuapp.co
 ## Getting Started
 
 > This app contains API secrets and passwords that have been hidden deliberately, so the app cannot be run with its features on your local machine. However, feel free to clone this repository if necessary.
-If you do want to make this work, you'll need:\
->On App.js:
-> 1. set process.env.DATABASEURL to your own MongoDB database server.
-> 2. set process.env.SECRETKEY to your own secret HASH key.\
-\
->On initDB.js: 
->   1. set PROCESS.ENV.x_auth_token to your own x_auth_token, by signing up to [Captain Coaster](https://captaincoaster.com/) and getting that API key.
+If you do want to make this work, you'll need:<br/> <br/> 
+> On App.js:
+> * set process.env.DATABASEURL to your own MongoDB database server.
+> * set process.env.SECRETKEY to your own secret HASH key.<br/><br/>
+
+On initDB.js:
+
+> * set PROCESS.ENV.x_auth_token to your own x_auth_token, by signing up to [Captain Coaster](https://captaincoaster.com/) and getting that API key.
+
 
 ### Clone or download this repository
 
