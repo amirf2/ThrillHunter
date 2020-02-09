@@ -34,7 +34,7 @@ To see the app in action, go to [ThrillHunter](https://thrillhunter.herokuapp.co
 
 * Adding roller coasters to wishlist / visited list.
 
-* "Make me thrilled" - randomlly randomly choose a roller coaster
+* "Make Me Thrilled" - randomly choose a roller coaster.
 
 
 ## Getting Started
