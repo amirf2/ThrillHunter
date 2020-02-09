@@ -69,7 +69,7 @@ app.use("/rollercoasters",rollerCoasterRoutes);
 app.use("/rollercoasters/:id/comments",commentRoutes);
 
 
-app.listen(3000,() => {
+app.listen(process.env.PORT,process.env.IP,() => {
 	console.log("The ThrillHunter Server Has Started");
 });
 
