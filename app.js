@@ -1,4 +1,4 @@
-const express                      = require("express"),
+const     express                  = require("express"),
 	  app                      = express(),
 	  bodyParser               = require("body-parser"),
 	  fetch                    = require("node-fetch"),
@@ -14,7 +14,7 @@ const express                      = require("express"),
 	  methodOverride           = require("method-override"),
 	  {URLSearchParams}        = require('url');
 
-const commentRoutes                = require("./routes/comments"),
+const     commentRoutes            = require("./routes/comments"),
 	  rollerCoasterRoutes      = require("./routes/rollercoasters"),
 	  indexRoutes              = require("./routes/index"),
 	  rollerCoasterListsRoutes = require("./routes/rollercoastersLists");
