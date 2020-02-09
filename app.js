@@ -21,8 +21,8 @@ const commentRoutes            = require("./routes/comments"),
 
 
 
-
-mongoose.connect("mongodb://localhost/thrill_hunter", {useNewUrlParser: true,  useUnifiedTopology: true, useFindAndModify: false});
+const MongoDB_URL = process.env.DATABASEURL || "mongodb://localhost/thrill_hunter"
+mongoose.connect(MongoDB_URL, {useNewUrlParser: true,  useUnifiedTopology: true, useFindAndModify: false});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -45,7 +45,7 @@ initDB();
 app.locals.moment = require('moment');
 
 app.use(expressSession({
-	secret: "Shredinger is the most evil cat on earth",
+	secret: process.env.SECRETKEY,
 	resave: false,
 	saveUninitialized: false
 }));
