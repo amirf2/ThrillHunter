@@ -1,9 +1,9 @@
 
-const express                = require("express"),
-      router                 = express.Router({mergeParams: true}), 
+const     express                = require("express"),
+          router                 = express.Router({mergeParams: true}), 
 	  RollerCoaster          = require("../models/rollercoaster"),
 	  Comment                = require("../models/comment"),
-      fetch                  = require("node-fetch"),
+          fetch                  = require("node-fetch"),
 	  middleware             = require("../middleware/index"),
 	  {URLSearchParams}      = require('url'),
 	  MAX_DATA_PAGES = 98;
