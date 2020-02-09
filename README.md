@@ -44,9 +44,8 @@ If you do want to make this work, you'll need:<br/> <br/>
 > On App.js:
 > * set process.env.DATABASEURL to your own MongoDB database server.
 > * set process.env.SECRETKEY to your own secret HASH key.<br/><br/>
-
-On initDB.js:
-
+>
+> On initDB.js:
 > * set PROCESS.ENV.x_auth_token to your own x_auth_token, by signing up to [Captain Coaster](https://captaincoaster.com/) and getting that API key.
 
 
