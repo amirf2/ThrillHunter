@@ -67,7 +67,11 @@ router.get("/random",(req,res) =>{
 				const {country} = myLocationJson;
 				let countryNameTemp =  country.name.split('.')[1];
 				const countryName =  countryNameTemp[0].toUpperCase() + countryNameTemp.substring(1);
-					res.render("rollercoasters/random/index", {randomRollerCoaster: randomRollerCoaster, country: countryName==="Na"? "Unknown": countryName==="Usa"? "USA" : countryName==="Uk"? "UK" : countryName });
+					res.render("rollercoasters/random/index",
+						   {randomRollerCoaster: randomRollerCoaster, 
+						    country: countryName==="Na"? "Unknown": 
+						    countryName==="Usa"? "USA" : 
+						    countryName==="Uk"? "UK" : countryName });
 
 			});
 		
