@@ -1,6 +1,6 @@
 const mongoose 		  = require("mongoose"),
 	  RollerCoaster   = require("./models/rollercoaster"),
-	  Comment 		  = require("./models/comment"),
+	  Comment 	  = require("./models/comment"),
 	  fetch           = require("node-fetch"),
 	  x_auth_token    = PROCESS.ENV.x_auth_token,
 	  base_url        = 'https://captaincoaster.com',
