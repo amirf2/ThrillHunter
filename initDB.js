@@ -2,7 +2,7 @@ const mongoose 		  = require("mongoose"),
 	  RollerCoaster   = require("./models/rollercoaster"),
 	  Comment 		  = require("./models/comment"),
 	  fetch           = require("node-fetch"),
-	  x_auth_token    = 'cca7da28-301b-4464-bd67-eea9d703c423',
+	  x_auth_token    = PROCESS.ENV.x_auth_token,
 	  base_url        = 'https://captaincoaster.com',
 	  data            = 'hydra:member'
 	  
