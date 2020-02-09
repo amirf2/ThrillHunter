@@ -1,7 +1,7 @@
 const express       = require("express"),
       router        = express.Router({mergeParams: true}),
-	  passport      = require("passport"),
-	  User          = require("../models/user");
+      passport      = require("passport"),
+      User          = require("../models/user");
 
 /*---------------------------------------------------------------------
                         Auth Route
