@@ -26,6 +26,10 @@ To see the app in action, go to [ThrillHunter](https://thrillhunter.herokuapp.co
 * Responsive web design
 
 
+## Services
+
+* Responsive web design
+
 ## Getting Started
 
 > This app contains API secrets and passwords that have been hidden deliberately, so the app cannot be run with its features on your local machine. However, feel free to clone this repository if necessary.
