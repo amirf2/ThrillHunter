@@ -1,0 +1,44 @@
+<%- include("../../partials/header") %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card rollerCoasterRandomItem card-well mb-4">
+				<a href="https://captaincoaster.com/images/coasters/<%= randomRollerCoaster.mainImage.path %>">
+					<img class="card-img-top" src="https://captaincoaster.com/images/coasters/<%= randomRollerCoaster.mainImage.path %>">
+				</a>
+				<div class="card-body card-well">
+					<!-- <button class="float-right btn btn-sm btn-primary">More Photos</button> -->
+					<h2><%= randomRollerCoaster.name %></h2> 
+					<h5 class="text-capitalize">
+					<i class="fas fa-map-marker-alt" title="Park Name"></i><%= randomRollerCoaster.park.name%>
+					<i class="fas fa-globe-americas" title="Country" style="padding-left: 20px;"></i><%= country %>
+					</h5>	
+					<hr>
+					<div>
+						<span>
+							<i class="fas fa-tachometer-alt" title="Speed"></i> <%= randomRollerCoaster.speed? randomRollerCoaster.speed : "unknown" %>
+						</span>
+						<span>
+							<i class="fas fa-long-arrow-alt-down fa-rotate-45" title="Height"></i>  <%= randomRollerCoaster.height? randomRollerCoaster.height+" meters" : "unknown" %>
+						</span>
+						<span>
+							<i class="fas fa-chair" title="Seating Type"></i>  <%= randomRollerCoaster.seatingType.name? randomRollerCoaster.seatingType.name : "unknown" %>
+						</span>
+						<span>
+							<i class="fas fa-infinity" title="Loops"></i>  <%= randomRollerCoaster.inversionsNumber? randomRollerCoaster.inversionsNumber : "unknown" %>
+						</span>
+						<span>
+							<i class="fas fa-star" title="Rank"></i>  <%= randomRollerCoaster.rank? randomRollerCoaster.rank : "unknown" %>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a class="btn btn-outline-secondary" href="/rollercoasters">Go Back</a>
+</div>
+
+<%- include("../../partials/footer") %>
+
+
+

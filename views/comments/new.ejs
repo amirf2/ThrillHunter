@@ -1,0 +1,20 @@
+
+<%- include("../partials/header") %>
+<div class="container">
+    <div class="row">
+		<div class="col-md-12 text-center">
+			<h1 class="h3 mb-3 font-weight-normal">Add a New Comment to  <%= rollerCoaster.name %></h1>
+			<div class="container" style="width: 60%;">
+				<form class="mb-4" action="/rollercoasters/<%= rollerCoaster._id %>/comments" method="POST">
+					<!-- <label for="inputText" class="sr-only">Text</label>
+					<input type="text" id="commentText" name="text" class="form-control input-lg" placeholder="Text" required> -->
+					<label for="commentText"></label>
+					<textarea class="form-control mb-2" name="text" id="commentText" rows="5" placeholder="Text" required></textarea>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+				</form>
+			<a class="btn btn-success float-left" href="/rollercoasters/<%= rollerCoaster._id %>">Go Back</a>
+			</div>
+	</div>	
+</div>
+<%- include("../partials/footer") %>
+

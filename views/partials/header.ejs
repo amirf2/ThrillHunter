@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ThrillHunter</title>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+			  rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">        
+		<link rel="stylesheet" href="/stylesheets/main.css">
+		<link rel="stylesheet" href="/stylesheets/navbar.css">
+		<link rel="stylesheet" href="/stylesheets/authForms.css">
+		<link rel="icon" href="https://i.imgur.com/NE9UUh1.png">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+    	<script src="https://kit.fontawesome.com/4b7beec3c8.js" crossorigin="anonymous"></script>
+	</head>
+    <body>
+		
+		
+		
+	<nav class="navbar navbar-expand-md mb-4 py-1">
+	
+		<img class="navbar-brand navbar-icon" src="https://i.imgur.com/uDjf2tK.png" width=50px height=50px>
+		<!-- <img class="navbar-brand navbar-icon" src="https://i.imgur.com/rfkdkMm.png" width=50px height=50px> -->
+		<a class="navbar-brand navbar-brand-center" href="/"><strong>ThrillHunter</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+			<a class="nav-link" href="/rollercoasters">Roller Coasters</a>
+          </li>
+          <li class="nav-item">
+			<a class="nav-link" href="/rollercoasters/random">Make Me Thrilled</a>
+          </li>
+		  <% if (currentUser){ %>
+		  	<li class="nav-item">
+				<a class="nav-link" href="/wishlist">My Wishlist</a>
+            </li>
+			<li class="nav-item">
+				<a class="nav-link" href="/experienced">My Visited List</a>
+            </li>
+		  <% } %>
+        </ul>
+		<ul class="navbar-nav ml-auto">
+			
+		<% if (!currentUser){ %>
+			<li class="nav-item">
+				<a class="nav-link" href="/login">Login</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/register">Sign Up</a>
+			</li>
+		<% } else { %>
+			<li class="nav-item">
+				<a class="nav-link"><%= currentUser.username %></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/logout">Logout</a>
+			</li>
+		<% } %>
+		</ul>
+
+        <!-- <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+		
+
+		
+		
+		
+	<div class="container">
+		<% if (error && error.length>0){ %>
+			<div class="alert alert-danger">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if (success && success.length>0){ %>
+			<div class="alert alert-success">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>
+

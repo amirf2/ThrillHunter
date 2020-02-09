@@ -1,0 +1,28 @@
+<%- include("../partials/header") %>
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>My Wish List</h1>
+             <p>One at a time, I will conquer them all </p>
+         </div>
+     </header>
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+		 <% wishlist.forEach(function(rollerCoaster){ %>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+				<div class="card rollerCoasterList" >
+					 <a href="<%= rollerCoaster.image %>">
+						<img class="card-img-top" src="<%= rollerCoaster.image %>" alt="<%= rollerCoaster.name %>">
+					</a>
+					 <div class="card-body">
+						<h5 class="card-title"><%= rollerCoaster.name %></h5>
+						<a class="btn btn-primary" href="/rollercoasters/<%= rollerCoaster._id %>">More Info</a>	   
+					 </div>
+				</div>	
+        	</div>
+		<% }); %>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>
+
+

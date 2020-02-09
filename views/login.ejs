@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+
+<div class="row">
+	<div class="col-md-12 text-center">
+	  <form class="form-signin" action="/login" method="POST">
+		  <img class="mb-4" src="https://i.imgur.com/NE9UUh1.png" alt="" width="72" height="72">
+		  <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+		  <label for="inputUsername" class="sr-only">Username</label>
+		  <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
+		  
+		  <label for="inputPassword" class="sr-only">Password</label>
+		  <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+		  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+	  </form>
+	</div>
+	<div class="form-signin" >
+		<a href="/rollercoasters">Go Back</a>
+	</div>
+</div>
+
+<%- include("partials/footer") %>

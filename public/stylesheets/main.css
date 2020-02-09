@@ -1,0 +1,128 @@
+html {
+font-size: 100%;
+}
+
+/* body {
+	background-color: #D2D8DF
+} */
+
+.card img {
+    width: 100%;
+}
+
+.card {
+    padding: 0;
+}
+
+.card .caption-full {
+    padding: 9px;
+}
+
+.card.rollerCoasterList img{
+	height: 200px;
+}
+
+.card.rollerCoasterItem img{
+	width: 100%;
+	height: 500px;
+
+}
+
+.card.rollerCoasterRandomItem img{
+	width: 100%;
+	height: 670px;
+
+}
+
+.container.rc-container{
+	width:200px;
+}
+
+.navbar-brand.navbar-icon{
+	padding: 0px;
+}
+
+@media (min-width:768px){
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    margin-left: 1px;
+  }
+}
+
+.location-margin {
+	margin-right: 0px;
+}
+
+i {
+  margin-right: 10px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+}
+
+form.form-inline { 
+display: inline-block;
+}
+
+div span 
+{
+    display: block;
+}
+
+.btn-group-xs > .btn, .btn-xs {
+  padding: .25rem .4rem;
+  font-size: .875rem;
+  line-height: .5;
+  border-radius: .2rem;
+}
+
+/* .card-well {
+	padding: 3px;	
+	margin-bottom 3px;
+	margin-top: 5px;
+	border-top 2px;
+} */
+
+.jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.fa-rotate-45 {
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    -o-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
+
+
+.auth-forms {
+	width: 100vh;
+	margin: 25px auto;
+}
+
+.nav-link{
+    color: white;
+    font-size: 0.9em ;
+}
+
+.jumbotron {
+    background-color: #eee;
+}
+
+@media screen and (min-width: 768px){
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 50px;
+}
+	
+.jumbotron p {
+    font-size: 19px;
+}

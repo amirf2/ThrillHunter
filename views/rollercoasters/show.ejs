@@ -1,0 +1,101 @@
+<%- include("../partials/header") %>
+<div class="container">
+	<div class="row">
+				<div class="col-md-12">
+					<div class="card mb-4">	
+						<div class="container mt-2">
+							<% if (!currentUser || (currentUser && !currentUser.wishlist.includes(rollerCoaster._id))){ %>
+								<form class="d-inline-block" action="/wishlist" method="post">
+									<button class= "btn btn-sm btn-success" type="submit" name="rc_id" value="<%= rollerCoaster._id %>"> Add To My Wish List</button>
+								</form>
+							<% } else { %>
+								<form class="d-inline-block" action="/wishlist/edit?_method=DELETE" method="post">
+									<button class= "btn btn-sm btn-danger" type="submit" name="rc_id" value="<%= rollerCoaster._id %>"> Remove From My Wish List</button>
+								</form>
+							<% } %>
+							<% if (!currentUser || (currentUser && !currentUser.experienced.includes(rollerCoaster._id))){ %>
+								<form class="d-inline-block float-right" action="/experienced" method="post">
+									<button class= "btn btn-sm btn-success" type="submit" name="rc_id" value="<%= rollerCoaster._id %>"> Add To My Experience List</button>
+								</form>
+							<% } else { %>
+								<form class="d-inline-block float-right" action="/experienced/edit?_method=DELETE" method="post">
+									<button class= "btn btn-sm btn-danger " type="submit" name="rc_id" value="<%= rollerCoaster._id %>"> Remove From My Experience List</button>
+								</form>
+							<% } %>
+						</div>
+						<div class="card-body">
+							<div class="text-center">
+								<h2><%= rollerCoaster.name %></h2> 
+								<h5 class="text-capitalize">
+								<i class="fas fa-map-marker-alt" title="Park Name"></i><%= rollerCoaster.location.park%>
+								<i class="fas fa-globe-americas" title="Country" style="padding-left: 20px;"></i><%= rollerCoaster.location.country %>
+								</h5>	
+							<hr>	
+							<!-- <div class="container rc-container text-center"> -->
+					<div>
+						<span>
+							<i class="fas fa-tachometer-alt" title="Speed"></i>  <%=  rollerCoaster.speed%>
+						</span>
+						<span>
+							<i class="fas fa-long-arrow-alt-down fa-rotate-45" title="Height"></i>   <%= rollerCoaster.height %>
+						</span>
+						<span>
+							<i class="fas fa-chair" title="Seating Type"></i>  <%= rollerCoaster.seatingType %>
+						</span>
+						<span>
+							<i class="fas fa-infinity" title="Loops"></i>  <%= rollerCoaster.loops %>
+						</span>
+						<span>
+							<i class="fas fa-star" title="Rank"></i>   <%= rollerCoaster.rank %>
+						</span>
+					</div>
+															</div>
+
+							<!-- </div>	 -->
+						</div>
+                	</div>
+			<div class="card mb-4">
+				<div class="row text-center" >
+					 <% rollerCoaster.moreImages.forEach(function(image){ %>
+						<div class="col-lg-3 col-md-4 col-sm-6 mb-4 ">
+							<div class="card rollerCoasterList">
+							   <a href="<%= image %>"><img class="card-img-top" src="<%= image %>" alt="<%= rollerCoaster.name %>"></a>
+							</div>
+						</div>
+					<% }); %>
+				</div>
+			</div>	
+			<div class="card mb-4">
+					<div class="container mt-2 mb-2">
+							<a class="btn btn-sm btn-primary float-right" href="/rollercoasters/<%= rollerCoaster._id %>/comments/new">Add New Comment</a>
+					</div>
+				<% rollerCoaster.comments.forEach(function(comment, index){ %>
+					<% if (index>0){ %>
+				    	<hr>
+					<% } %>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="container">
+								<span class="float-right"><%= moment(comment.createdAt).fromNow() %></span>
+								<strong><%= comment.author.username %></strong>
+								<p class="mt-2"><%= comment.text %></p>
+								<% if (currentUser && currentUser.username===comment.author.username){ %>		
+									<div>
+										<a class="btn btn-xs btn-warning" href="/rollercoasters/<%= rollerCoaster._id %>/comments/<%= comment._id %>/edit">Edit</a>
+										<form class="form-inline" action="/rollercoasters/<%= rollerCoaster._id %>/comments/<%= comment._id %>?_method=DELETE" method="post">
+											<button class= "btn btn-xs btn-danger" type="submit" name="rc_id" value="<%= rollerCoaster._id %>"> Remove</button>
+										</form>
+									</div>
+								<% } %>
+							</div>
+						</div>
+					</div>
+				<% }) %>
+			</div>
+		</div>
+	</div>
+	<a class="btn btn-outline-secondary mb-4" href="/rollercoasters">Go Back</a>
+</div>
+
+<%- include("../partials/footer") %>
+
