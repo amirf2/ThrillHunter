@@ -28,11 +28,24 @@ To see the app in action, go to [ThrillHunter](https://thrillhunter.herokuapp.co
 
 ## Services
 
-* Responsive web design
+* A list of the best roller coasters, from all over the world.
+
+* Adding reviews/comments to the roller coasters
+
+* Adding roller coasters to wishlist / visited list.
+
+* "Make me thrilled" - randomlly randomly choose a roller coaster
+
 
 ## Getting Started
 
 > This app contains API secrets and passwords that have been hidden deliberately, so the app cannot be run with its features on your local machine. However, feel free to clone this repository if necessary.
+If you do want to make this work, you'll need:
+> On App.js:
+> 1. set process.env.DATABASEURL to your own MongoDB database server.
+> 2. set process.env.SECRETKEY to your own secret HASH key. blabla
+> On initDB.js: 
+>   1. set PROCESS.ENV.x_auth_token to your own x_auth_token, by signing up to [Captain Coaster](https://captaincoaster.com/) and getting that API key.
 
 ### Clone or download this repository
 
