@@ -74,7 +74,7 @@ yarn install
 
 * [ejs](http://ejs.co/)
 * [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
-* [Jquery] (https://code.jquery.com/)
+* [Jquery](https://code.jquery.com/)
 
 ### Back-end
 
