@@ -1,6 +1,6 @@
 
 const  RollerCoaster  = require("../models/rollercoaster"),
-	   Comment        = require("../models/comment");
+       Comment        = require("../models/comment");
 		  
 function isLoggedIn(req, res, next){
 	if (req.isAuthenticated()){
